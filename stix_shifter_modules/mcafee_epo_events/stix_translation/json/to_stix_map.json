@@ -1,0 +1,201 @@
+{
+  "EPOEvents.DetectedUTC": {
+    "key": "first_observed",
+    "transformer": "McAfeeToTimestamp",
+    "cybox": false
+  },
+   "EPOEvents.ReceivedUTC": {
+    "key": "last_observed",
+     "transformer": "McAfeeToTimestamp",
+     "cybox": false
+  },
+  "EPOEvents.AnalyzerName": {
+    "key": "x_com_mcafee_epo.analyzer_name",
+    "cybox": false
+  },
+  "EPOEvents.AnalyzerVersion": {
+    "key": "x_com_mcafee_epo.analyzer_version",
+    "cybox": false
+  },
+  "EPOEvents.AnalyzerHostName": {
+    "key": "x_com_mcafee_epo.analyzer_hostname",
+    "cybox": false
+  },
+  "EPOEvents.AnalyzerDetectionMethod": {
+    "key": "x_com_mcafee_epo.analyzer_detection_method",
+    "cybox": false
+  },
+  "EPOEvents.SourceHostName": {
+    "key": "x_com_mcafee_epo.source_hostname",
+    "cybox": false
+  },
+  "EPOEvents.TargetHostName": {
+    "key": "x_com_mcafee_epo.target_hostname",
+    "cybox": false
+  },
+  "EPOEvents.TargetMAC": {
+    "key": "x_com_mcafee_epo.target_MAC",
+    "cybox": false
+  },
+  "EPOEvents.TargetUserName": {
+    "key": "x_com_mcafee_epo.target_username",
+    "cybox": false
+  },
+  "EPOEvents.SourceUserName": {
+    "key": "x_com_mcafee_epo.source_username",
+    "cybox": false
+  },
+  "EPOEvents.ThreatCategory": {
+    "key": "x_com_mcafee_epo.threat_category",
+    "cybox": false
+  },
+  "EPOEvents.ThreatSeverity": {
+    "key": "x_com_mcafee_epo.threat_severity",
+    "cybox": false
+  },
+  "EPOEvents.ThreatName": {
+    "key": "x_com_mcafee_epo.threat_name",
+    "cybox": false
+  },
+  "EPOEvents.ThreatType": {
+    "key": "x_com_mcafee_epo.threat_type",
+    "cybox": false
+  },
+  "EPOEvents.ThreatActionTaken": {
+    "key": "x_com_mcafee_epo.threat_action_taken",
+    "cybox": false
+  },
+  "EPOEvents.ThreatHandled": {
+    "key": "x_com_mcafee_epo.threat_handled",
+    "cybox": false
+  },
+  "EPOEvents.ThreatEventID": {
+    "key": "x_com_mcafee_epo.threat_id",
+    "cybox": false
+  },
+  "EPOEvents.SourceIPV4": [
+    {
+      "key": "ipv4-addr.value",
+      "object": "src_ip",
+      "transformer": "McAfeeToIPv4"
+    },
+    {
+      "key": "network-traffic.src_ref",
+      "object": "nt",
+      "references": "src_ip"
+    }
+  ],
+  "EPOEvents.TargetIPV4": [
+    {
+      "key": "ipv4-addr.value",
+      "object": "dst_ip",
+      "transformer": "McAfeeToIPv4"
+    },
+    {
+      "key": "network-traffic.dst_ref",
+      "object": "nt",
+      "references": "dst_ip"
+    }
+  ],
+  "EPOEvents.SourceIPV6": [
+    {
+      "key": "ipv6-addr.value",
+      "object": "src_ip"
+    },
+    {
+      "key": "network-traffic.src_ref",
+      "object": "nt",
+      "references": "src_ip"
+    }
+  ],
+  "EPOEvents.TargetIPV6": [
+    {
+      "key": "ipv6-addr.value",
+      "object": "dst_ip"
+    },
+    {
+      "key": "network-traffic.dst_ref",
+      "object": "nt",
+      "references": "dst_ip"
+    }
+  ],
+  "EPOEvents.TargetFileName": [
+    {
+    "key": "directory.path",
+    "object": "directory",
+    "transformer": "ToDirectoryPath"
+    },
+    {
+      "key": "file.name",
+      "object": "filename",
+      "transformer": "ToFileName"
+    },
+    {
+      "key": "file.parent_directory_ref",
+      "object": "filename",
+      "references": "directory"
+    }
+  ],
+  "EPOEvents.TargetPort": {
+    "key": "network-traffic.dst_port",
+    "object": "nt"
+  },
+  "EPOEvents.TargetProtocol": {
+    "key": "network-traffic.protocols",
+    "object": "nt",
+    "transformer": "FormatMcafeeProtocol"
+  },
+  "EPOEvents.SourceURL": {
+    "key": "url.value"
+  },
+  "EPOEvents.TargetProcessName":
+    {
+    "key": "process.name",
+    "object": "dst_process"
+    },
+  "EPOEvents.SourceProcessName":
+    {
+    "key": "process.name",
+    "object": "src_process"
+  },
+  "EPOEvents.SourceMAC": [
+    {
+      "key": "mac-addr.value",
+      "object": "src_mac"
+    },
+    {
+      "key": "ipv4-addr.resolves_to_refs",
+      "object": "src_ip",
+      "references": ["src_mac"]
+    },
+    {
+      "key": "ipv6-addr.resolves_to_refs",
+      "object": "src_ip",
+      "references": ["src_mac"]
+    }
+  ],
+  "EPOEvents.TargetMAC": [
+    {
+      "key": "mac-addr.value",
+      "object": "dst_mac"
+    },
+    {
+
+      "key": "ipv4-addr.resolves_to_refs",
+
+      "object": "dst_ip",
+
+      "references": ["dst_mac"]
+
+    },
+    {
+
+      "key": "ipv6-addr.resolves_to_refs",
+
+      "object": "dst_ip",
+
+      "references": ["dst_mac"]
+
+    }
+  ]
+}

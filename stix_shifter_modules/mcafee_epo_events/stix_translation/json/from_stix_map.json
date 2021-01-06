@@ -1,0 +1,61 @@
+{
+  "ipv4-addr": {
+    "fields": {
+      "value": ["EPOEvents.SourceIPV4", "EPOEvents.TargetIPV4"]
+    }
+  },
+  "ipv6-addr": {
+    "fields": {
+      "value": ["EPOEvents.SourceIPV6", "EPOEvents.TargetIPV6"]
+    }
+  },
+  "url": {
+    "fields": {
+      "value": ["EPOEvents.SourceURL"]
+    }
+  },
+  "mac-addr": {
+    "fields": {
+      "value": ["EPOEvents.SourceMAC", "EPOEvents.TargetMAC"]
+    }
+  },
+  "file": {
+    "fields": {
+      "name": ["EPOEvents.TargetFileName"]
+    }
+  },
+  "process":
+  {
+    "fields": {
+      "name": ["EPOEvents.SourceProcessName","EPOEvents.TargetProcessName"]
+    }
+  },
+  "network-traffic": {
+    "fields": {
+      "dst_port": ["EPOEvents.TargetPort"],
+      "protocols": ["EPOEvents.TargetProtocols"],
+      "src_ref.value": ["EPOEvents.SourceIPV4", "EPOEvents.SourceIPV6"],
+      "dst_ref.value": ["EPOEvents.TargetIPV4", "EPOEvents.TargetIPV6"]
+    }
+  },
+  "x_com_mcafee_epo": {
+    "fields": {
+      "analyzer_name": ["EPOEvents.AnalyzerName"],
+      "analyzer_version": ["EPOEvents.AnalyzerVersion"],
+      "analyzer_hostname": ["EPOEvents.AnalyzerHostName"],
+      "analyzer_detection_method": ["EPOEvents.AnalyzerDetectionMethod"],
+      "source_hostname": ["EPOEvents.SourceHostName"],
+      "target_hostname": ["EPOEvents.TargetHostName"],
+      "target_username": ["EPOEvents.TargetUserName"],
+      "source_username": ["EPOEvents.SourceUserName"],
+      "threat_category": ["EPOEvents.ThreatCategory"],
+      "threat_severity": ["EPOEvents.ThreatSeverity"],
+      "threat_name": ["EPOEvents.ThreatName"],
+      "threat_type": ["EPOEvents.ThreatType"],
+      "threat_action_taken": ["EPOEvents.ThreatActionTaken"],
+      "threat_handled": ["EPOEvents.ThreatHandled"],
+      "threat_id": ["EPOEvents.ThreatEventID"]
+
+    }
+  }
+}
