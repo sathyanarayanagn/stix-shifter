@@ -6,7 +6,7 @@ from unittest.mock import patch
 import unittest
 from stix_shifter_modules.mcafee_epo_events.stix_transmission.api_client import APIClient
 
-connection = {"host": "10.254.33.47", "pot": 8443}
+connection = {"host": "10.254.33.47", "port": 8443}
 config = {"auth": {"username": "admin", "password": "admin@123"}}
 
 
